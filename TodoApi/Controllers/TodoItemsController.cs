@@ -42,5 +42,35 @@ namespace TodoApi.Controllers
             //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
             return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
         }
+
+        // PUT: api/TodoItems/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
+        {
+            if (id != todoItem.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(todoItem).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TodoItemExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
     }
 }

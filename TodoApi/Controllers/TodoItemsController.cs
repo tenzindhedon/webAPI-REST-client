@@ -8,32 +8,39 @@ using Microsoft.Extensions.Logging;
 namespace TodoApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TodoItemsController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly TodoContext _context;
 
-        private readonly ILogger<TodoItemsController> _logger;
-
-        public TodoItemsController(ILogger<TodoItemsController> logger)
+        public TodoItemsController(ILogger<TodoItemsController> context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        // GET: api/TodoItems/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var todoItem = await _context.TodoItems.FindAsync(id);
+
+            if (todoItem == null)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return NotFound();
+            }
+
+            return todoItem;
+        }
+
+        // POST: api/TodoItems
+        [HttpPost]
+        public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
+        {
+            _context.TodoItems.Add(todoItem);
+            await _context.SaveChangesAsync();
+
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.Id }, todoItem);
         }
     }
 }

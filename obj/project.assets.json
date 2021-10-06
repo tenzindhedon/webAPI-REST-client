@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\WebAPIClient\\WebAPIClient.csproj",
+      "projectUniqueName": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\WebAPIClient.csproj",
       "projectName": "WebAPIClient",
-      "projectPath": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\WebAPIClient\\WebAPIClient.csproj",
+      "projectPath": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\WebAPIClient.csproj",
       "packagesPath": "C:\\Users\\A198157\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\WebAPIClient\\obj\\",
+      "outputPath": "C:\\Users\\A198157\\source\\repos\\WebAPIClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

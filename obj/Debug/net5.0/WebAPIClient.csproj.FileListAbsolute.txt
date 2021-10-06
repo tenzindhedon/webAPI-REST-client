@@ -14,3 +14,7 @@ C:\Users\A198157\source\repos\WebAPIClient\obj\Debug\net5.0\WebAPIClient.dll
 C:\Users\A198157\source\repos\WebAPIClient\obj\Debug\net5.0\ref\WebAPIClient.dll
 C:\Users\A198157\source\repos\WebAPIClient\obj\Debug\net5.0\WebAPIClient.pdb
 C:\Users\A198157\source\repos\WebAPIClient\obj\Debug\net5.0\WebAPIClient.genruntimeconfig.cache
+C:\Users\A198157\source\repos\WebAPIClient\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\A198157\source\repos\WebAPIClient\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\A198157\source\repos\WebAPIClient\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\A198157\source\repos\WebAPIClient\obj\Debug\net5.0\WebAPIClient.csproj.CopyComplete
